@@ -1,53 +1,315 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site em Manutenção | Lokcerto</title>
-  <link rel="stylesheet" href="manutencao.css" />
+  <meta name="description" content="Lokcerto: locação de equipamentos para construção civil em Maceió desde 1995. Equipamentos e serviços especializados com segurança e atendimento próximo." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Lokcerto | Locação de Equipamentos para Construção Civil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css?v=20260922-6" />
+  <script src="js/produtos.js?v=20260917-4" defer></script>
+  <script src="js/script.js?v=20260917-4" defer></script>
 </head>
-
 <body>
-  <header class="top-bar"></header>
-  
-  <main class="pagina-manutencao">
-    <div class="logo-area">
-      <img
-        src="assets/logomarca_lokcerto.png"
-        alt="Lokcerto Locação de Equipamentos"
-        class="logo"
-      />
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="topbar" id="inicio">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Lokcerto - início">
+        <img src="assets/logomarca-lokcerto.png" alt="Lokcerto" />
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#equipamentos">Equipamentos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button class="quote-trigger" type="button" data-open-cart aria-label="Abrir solicitação de orçamento">
+        <i class="bi bi-bag-check" aria-hidden="true"></i>
+        <span>Orçamento</span>
+        <strong data-cart-count hidden>0</strong>
+      </button>
     </div>
+  </header>
 
-    <section class="conteudo">
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Desde 1995 em Maceió</p>
+          <h1>Equipamento certo.<br /><em>Obra andando.</em></h1>
+          <!-- <h1>Equipamento <em>certo.</em><br /></h1>
+          <h1>Obra <em>andando.</em></h1> -->
+          <p class="hero-text">
+            Locação de equipamentos para construção civil com atendimento próximo,
+            segurança e soluções que acompanham a sua obra.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#equipamentos">Ver equipamentos <i class="bi bi-arrow-down-right"></i></a>
+            <a class="btn btn-ghost" href="https://wa.me/558299998692" target="_blank" rel="noopener noreferrer">Falar no WhatsApp <i class="bi bi-whatsapp"></i></a>
+          </div>
+          <div class="hero-metrics" aria-label="Destaques da Lokcerto">
+            <div><strong>30+</strong><span>anos de experiência</span></div>
+            <div><strong>NR-18</strong><span>segurança como requisito</span></div>
+            <div><strong>Alagoas</strong><span>atuação consolidada</span></div>
+          </div>
+        </div>
 
-      <div class="area-imagem">
-        <img src="assets/manutencao.png" alt="Imagem de manutenção" class="imagem-manutencao"/>
-      </div>
-
-      <div class="area-texto">
-        <h1>Desculpe o transtorno!</h1>
-        <h2>Site em manutenção...</h2>
-        <p>Estamos trabalhando para melhor atendê-lo.</p>
-        <p>Entre em contato conosco pelos canais abaixo:</p>
-        <div class="contatos">
-          <a href="https://wa.me/558299998692" target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-whatsapp"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: 6px;" aria-hidden="true"></i></i>
-            WhatsApp
-          </a>
-          <a href="https://www.instagram.com/lokcerto_locadora/" target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-instagram"></i>
-            Instagram
-          </a>
+        <div class="hero-visual" aria-hidden="true">
+          <figure class="hero-photo hero-photo-main">
+            <!-- <video autoplay muted loop playsinline preload="metadata" poster="assets/equipamentos/cimbramento-hero.png">
+              <source src="assets/video-lokcerto.mp4" type="video/mp4" />
+            </video> -->
+            <img src="assets/equipamentos/cimbramento-hero.png" alt="Cimbramento metálico em obra de construção civil" />
+          </figure>
+          <div class="hero-stamp">LOCAÇÃO<br />+ SERVIÇO</div>
         </div>
       </div>
+    </section>
 
+    <section class="catalog-section" id="equipamentos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span></span> Catálogo</p>
+            <h2>O que sua obra precisa,<br />sem complicação.</h2>
+          </div>
+          <p class="section-intro">
+            Encontre o equipamento que sua obra precisa. Clique em um item para ver os detalhes, escolher a configuração e adicionar ao seu orçamento.
+          </p>
+        </div>
+
+        <div class="product-grid" id="lista-equipamentos" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="difference-section" id="diferenciais">
+      <div class="container difference-grid">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span></span>Diferenciais</p>
+            <h2>Soluções que vão além da locação.</h2>
+          </div>
+        </div>
+
+        <div class="difference-cards">
+          <article class="difference-card difference-card-featured">
+            <p class="difference-kicker">Diferencial da Lokcerto</p>
+            <h3>Cimbramento com montagem especializada</h3>
+            <p>
+              Além da locação do sistema, realizamos a montagem do cimbramento com equipe especializada, oferecendo uma solução mais completa para a execução da sua obra.
+            </p>
+            <button type="button" class="text-link" data-product-open="cimbramento">Ver cimbramento <i class="bi bi-arrow-up-right"></i></button>
+          </article>
+
+          <article class="difference-card">
+            <p class="difference-kicker">Solução completa</p>
+            <h3>Andaime fachadeiro com montagem, ART e projeto</h3>
+            <p>
+              Uma solução completa para trabalhos em fachada, com fornecimento do sistema, montagem, ART e projeto do andaime fachadeiro.
+            </p>
+            <button type="button" class="text-link" data-product-open="andaime-fachadeiro">Ver andaime fachadeiro <i class="bi bi-arrow-up-right"></i></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-title">
+          <p class="eyebrow light"><span></span> Sobre a Lokcerto</p>
+          <h2>Experiência que<br />acompanha a obra.</h2>
+          <div class="about-year">1995</div>
+        </div>
+        <div class="about-copy">
+          <p>
+            Desde 1995, a Lokcerto atua na locação de equipamentos para construção civil em Alagoas,
+            oferecendo equipamentos e soluções para diferentes etapas da obra.
+          </p>
+          <p>
+            Com atendimento próximo e foco em segurança, qualidade e eficiência, a Lokcerto combina
+            experiência de mercado com soluções que vão além da locação — incluindo serviços
+            especializados para tornar a operação da obra mais simples e segura.
+          </p>
+          <div class="about-points">
+            <span><i class="bi bi-check2"></i> Experiência</span>
+            <span><i class="bi bi-check2"></i> Segurança</span>
+            <span><i class="bi bi-check2"></i> Qualidade</span>
+            <span><i class="bi bi-check2"></i> Soluções</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <div class="container">
+        <div class="section-head compact">
+          <div>
+            <p class="eyebrow"><span></span> Como funciona</p>
+            <h2>Da escolha ao orçamento<br />em poucos passos.</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <article><b>01</b><h3>Escolha</h3><p>Veja os equipamentos e abra os detalhes sem sair da página.</p></article>
+          <article><b>02</b><h3>Configure</h3><p>Selecione tamanho, capacidade ou peso quando houver opções.</p></article>
+          <article><b>03</b><h3>Solicite</h3><p>Adicione os equipamentos ao orçamento e envie sua solicitação para nossa equipe pelo WhatsApp.</p></article>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="location-section" id="localizacao">
+      <div class="container location-grid">
+        <div class="location-copy">
+          <div>
+            <p class="eyebrow"><span></span> Onde estamos</p>
+            <h2>Visite a<br />Lokcerto.</h2>
+            <p class="location-intro">
+              Estamos na Gruta de Lourdes, em Maceió, em uma localização estratégica
+              para atender obras em toda a região.
+            </p>
+          </div>
+
+          <div class="location-details">
+            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+            <address>
+              <strong>R. Abelardo Pontes Lima, 435</strong>
+              <span>Gruta de Lourdes, Maceió–AL</span>
+            </address>
+          </div>
+
+          <a
+            class="btn location-route"
+            href="https://www.google.com/maps/dir/?api=1&destination=-9.6149439,-35.7354604"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Traçar rota <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="location-map">
+          <iframe
+            src="https://maps.google.com/maps?q=-9.6149439,-35.7354604&hl=pt-BR&z=16&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização da Lokcerto no Google Maps"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contato">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow"><span></span> Contato</p>
+          <h2>Vamos colocar<br />sua obra em movimento?</h2>
+        </div>
+        <div class="contact-actions">
+          <a href="https://wa.me/558299998692" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i><span>WhatsApp<strong>+55 82 9999-8692</strong></span><i class="bi bi-arrow-up-right"></i></a>
+          <a href="mailto:lokcerto@planoaengenharia.com.br"><i class="bi bi-envelope"></i><span>E-mail<strong>lokcerto@planoaengenharia.com.br</strong></span><i class="bi bi-arrow-up-right"></i></a>
+          <a href="https://www.instagram.com/lokcerto_locadora/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i><span>Instagram<strong>@lokcerto_locadora</strong></span><i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </div>
     </section>
   </main>
+
   <footer class="footer">
-    <p>&copy; 2026 Lokcerto Locação de Equipamentos. Todos os direitos reservados.</p>
+    <div class="container footer-conteudo">
+      <address class="footer-contato">
+        <div class="footer-informacao">
+          <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=-9.6149439,-35.7354604" target="_blank" rel="noopener noreferrer">
+            R. Abelardo Pontes Lima, 435<br />
+            Gruta de Lourdes, Maceió–AL
+          </a>
+        </div>
+        <div class="footer-informacao">
+          <i class="bi bi-envelope" aria-hidden="true"></i>
+          <a href="mailto:lokcerto@planoaengenharia.com.br">lokcerto@planoaengenharia.com.br</a>
+        </div>
+        <div class="footer-informacao">
+          <i class="bi bi-telephone" aria-hidden="true"></i>
+          <a href="tel:+558299998692">+55 82 9999-8692</a>
+        </div>
+      </address>
+
+      <a class="footer-logo" href="index.html" aria-label="Voltar ao início">
+        <img src="assets/logomarca-lokcerto-branca.png" alt="Lokcerto Locação de Equipamentos" />
+      </a>
+
+      <nav class="footer-redes-sociais" aria-label="Redes sociais">
+        <a href="https://wa.me/558299998692" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Lokcerto">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/lokcerto_locadora/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Lokcerto">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+        </a>
+      </nav>
+    </div>
+
+    <p class="container footer-text">
+      &copy; <span id="ano-atual"></span> Lokcerto Locação de Equipamentos. Todos os direitos reservados.
+    </p>
   </footer>
+
+  <div class="overlay" data-overlay hidden></div>
+
+  <section class="product-modal" data-product-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" type="button" data-close-product aria-label="Fechar detalhes"><i class="bi bi-x-lg"></i></button>
+    <div class="modal-media">
+      <div class="modal-badge" data-modal-badge hidden></div>
+      <img data-modal-image src="" alt="" />
+    </div>
+    <div class="modal-content">
+      <p class="product-category" data-modal-category></p>
+      <h2 id="modal-title" data-modal-title></h2>
+      <p class="modal-short" data-modal-short></p>
+      <div class="modal-highlight" data-modal-highlight hidden></div>
+      <div class="modal-description" data-modal-description></div>
+      <div class="variation-block" data-variation-block hidden>
+        <label>Escolha uma opção</label>
+        <div class="variation-options" data-variation-options></div>
+      </div>
+      <div class="modal-order-row">
+        <div class="qty-control" aria-label="Quantidade">
+          <button type="button" data-qty-minus aria-label="Diminuir quantidade">−</button>
+          <input type="number" data-qty-input value="1" min="1" max="999" aria-label="Quantidade" />
+          <button type="button" data-qty-plus aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button class="btn btn-primary add-quote" type="button" data-add-quote>Adicionar ao orçamento <i class="bi bi-plus-lg"></i></button>
+      </div>
+      <p class="modal-feedback" data-modal-feedback role="status"></p>
+    </div>
+  </section>
+
+  <aside class="cart-drawer" data-cart-drawer aria-hidden="true" aria-label="Solicitação de orçamento">
+    <header class="cart-head">
+      <div><h2>Orçamento</h2></div>
+      <button type="button" data-close-cart aria-label="Fechar orçamento"><i class="bi bi-x-lg"></i></button>
+    </header>
+    <div class="cart-list" data-cart-list></div>
+    <div class="cart-empty" data-cart-empty>
+      <i class="bi bi-bag"></i>
+      <h3>Seu orçamento está vazio.</h3>
+      <p>Escolha um equipamento para começar.</p>
+      <button type="button" class="btn btn-ghost dark" data-close-cart>Ver equipamentos</button>
+    </div>
+    <footer class="cart-footer" data-cart-footer hidden>
+      <div class="cart-summary"><span>Itens selecionados</span><strong data-cart-summary>0</strong></div>
+      <button class="btn btn-primary cart-whatsapp" type="button" data-send-whatsapp>Solicitar orçamento no WhatsApp <i class="bi bi-whatsapp"></i></button>
+      <button class="clear-cart" type="button" data-clear-cart>Limpar seleção</button>
+    </footer>
+  </aside>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
 </body>
 </html>
-
